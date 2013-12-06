@@ -90,10 +90,10 @@ function media_ally_report_page() {
 				    'post_mime_type' => 'image', 
 					'post_status' => 'inherit',
 					'posts_per_page' => -1,
-				    'meta_query' => array(
+				    'meta_query' => array( array(
 			            'key' => '_wp_attachment_image_alt',
 			            'compare' => 'NOT EXISTS'
-			        )
+			        ) )
 				);
 				$all_imgs = get_posts( $img_args );
 				$empty_alts = get_posts( $empty_alt_args );
